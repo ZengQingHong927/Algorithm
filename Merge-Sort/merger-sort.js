@@ -41,11 +41,11 @@ const merge = (left,right) => {
 const genRandomNumber = (amount) => {
   var numberList = [];
   while (numberList.length < amount) {
-    numberList.push(_.random(999));
+    numberList.push(_.random(99999));
   }
   return numberList;
 }
-const arr = genRandomNumber(10);
+const arr = genRandomNumber(100000);
 const start = Date.now();
 const result = mergerSort(arr);
 const duration = Date.now() - start;
