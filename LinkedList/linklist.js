@@ -1,3 +1,4 @@
+url https://humanwhocodes.com/blog/2019/01/computer-science-in-javascript-linked-list/
 var head = Symbol('head');
 // List[head] = 'First Node';
 
@@ -59,6 +60,45 @@ class LinkedList {
 
     remove(index) {
 
+        if ((this[head] === null) || (index < 0)) {
+            throw `Index ${index} node is not found`;
+        }
+
+        if (index === 0) {
+            const data = this[head].data;
+            this[head] = this[head].next;
+            return data;
+        }
+
+        let current = this[head];
+        let prev = null;
+        let i = 0;
+        while((current !== null) && (i < index)) {
+            prev = current;
+            current = current.next;
+            i++
+        }
+
+        if (current !== null) {
+            prev.next = current.next
+            return current.data;
+        }
+        throw `Index ${index} node is not found`;
+    }
+
+    length() {
+        if (this[head] === null) {
+            return 0;
+        }
+
+        let current = this[head];
+        let i = 0;
+        while(current !== null) {
+            current = current.next;
+            i++;
+        }
+
+        return i;
     }
 }
 
@@ -75,4 +115,6 @@ linklist.add(100);
 //     current = current.next;
 // }
 
-console.log(linklist.get(5));
+console.log(linklist.remove(3));
+console.log(linklist.get(3));
+console.log(linklist.length());
