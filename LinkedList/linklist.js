@@ -1,4 +1,5 @@
-url https://humanwhocodes.com/blog/2019/01/computer-science-in-javascript-linked-list/
+// url https://humanwhocodes.com/blog/2019/01/computer-science-in-javascript-linked-list/
+// url https://www.geeksforgeeks.org/reverse-a-linked-list/
 var head = Symbol('head');
 // List[head] = 'First Node';
 
@@ -100,6 +101,21 @@ class LinkedList {
 
         return i;
     }
+
+    reverse() {
+        let prev = null;
+        let current = this[head];
+        let next = null;
+
+        while (current !== null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        this[head] = prev;
+    }
 }
 
 const linklist = new LinkedList();
@@ -109,12 +125,20 @@ linklist.add(88);
 linklist.add(99);
 linklist.add(100);
 
+
 // let current = linklist[head];
 // while (current.next != null) {
 //     console.log(current.data);
 //     current = current.next;
 // }
-
-console.log(linklist.remove(3));
+console.log(linklist.get(0));
+console.log(linklist.get(1));
+console.log(linklist.get(2));
 console.log(linklist.get(3));
-console.log(linklist.length());
+console.log(linklist.get(4));
+linklist.reverse();
+console.log(linklist.get(0));
+console.log(linklist.get(1));
+console.log(linklist.get(2));
+console.log(linklist.get(3));
+console.log(linklist.get(4));
