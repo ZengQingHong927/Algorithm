@@ -1,17 +1,4 @@
-
-class LinkedListNode {
-    constructor(data) {
-        this.data = data;
-        this.next = null;
-    }
-}
-
-class LinkedList {
-    constructor(headname) {
-        let head = Symbol(headname);
-        this[head] = null;
-    }
-}
-
-const linkedlist = new LinkedList('headname');
-console.log(linkedlist);
+var str1 = 'Full-Stack';
+var str2 = 'Web Engineer';
+var str3 = str1.concat(str2);
+console.log (str3);
