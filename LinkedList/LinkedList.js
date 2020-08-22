@@ -23,13 +23,13 @@ class LinkedList {
         let current = this.head;
         if (current == null) {
             this.head = node;
-            return this;
         }
-
-        while (current.next !== null) {
-            current = current.next;
+        else {
+            while (current !== null && current.next !== null) {
+                current = current.next;
+            }
+            current.next = node;
         }
-        current.next = node;
         this.length += 1;
         return this;
     }
@@ -58,11 +58,14 @@ class LinkedList {
             else {
                 let prev;
                 let i = 0;
-                while (i < index) {
-                    prev = current;
-                    current = current.next
-                    i++;
-                }
+                // while (i < index) {
+                //     prev = current;
+                //     current = current.next
+                //     i++;
+                // }
+                prev = this.find (index-1);
+                if (prev.next === null)     return undefined;
+                current = prev.next;
                 prev.next = current.next;
                 this.length -= 1;
                 return current;
@@ -104,6 +107,39 @@ class LinkedList {
         }
         return linkedListString;
     }
+
+    updateAt (index, val) {
+        if (typeof val === 'undefined')     return;
+
+        if (index < 0 || index > this.length) {
+            return undefined;
+        }
+
+        let target;
+
+        target = this.find (index);
+
+        target.data = val;
+
+        return target;
+    }
+
+    reverse () {
+    
+        let prev = null;
+        let current = this.head;
+        let next = null;
+    
+        while (current !== null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+
+        this.head = prev;
+        return true;
+    }
 }
 
 // var node = new LinkedListNode (10);
@@ -122,7 +158,8 @@ class LinkedList {
 
 // var node5 = new LinkedListNode (100);
 // linklist.insertAt (node5, 1);
-// console.log (linklist);
+
+// console.log (linklist.find(1));
 // console.log (linklist.removeAt (2));
 // console.log (linklist.toString ());
 
