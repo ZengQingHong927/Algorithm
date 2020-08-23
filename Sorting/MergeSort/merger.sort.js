@@ -2,7 +2,7 @@
  * Recurceive merge sorting
  */
 
-const _ = require('lodash');
+var tool = require ('../tool');
 
 const mergerSort = (arr) => {
     const len = arr.length;
@@ -38,14 +38,7 @@ const merge = (left,right) => {
   return result;
 }
 
-const genRandomNumber = (amount) => {
-  var numberList = [];
-  while (numberList.length < amount) {
-    numberList.push(_.random(99999));
-  }
-  return numberList;
-}
-const arr = genRandomNumber(100000);
+const arr = tool.genRandomNumber (100);
 const start = Date.now();
 const result = mergerSort(arr);
 const duration = Date.now() - start;
