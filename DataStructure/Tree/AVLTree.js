@@ -123,20 +123,20 @@ class AVLTree extends BinarySearchTree {
                 if (balancedFactor === UNBALANCED_LEFT) {
                         let     balancedFactorLeft      = this.getNodeBalancedFactor (node.left);
                         if (balancedFactorLeft === BALANCED || balancedFactorLeft === SLIGHTLY_UNBALANCED_LEFT) {
-                                return this.rotationLL (node);
+                                node    = this.rotationLL (node);
                         }
                         else if (balancedFactorLeft === SLIGHTLY_UNBALANCED_RIGHT) {
-                                return this.rotationLR (node.left);
+                                node    = this.rotationLR (node.left);  // ? node.left
                         }
                 }
 
                 if (balancedFactor === UNBALANCED_RIGHT) {
                         let     balancedFactorRight     = this.getNodeBalancedFactor (node.right);
                         if (balancedFactorRight === BALANCED || balancedFactorRight === SLIGHTLY_UNBALANCED_RIGHT) {
-                                return this.rotationRR (node);
+                                node    = this.rotationRR (node);
                         }
                         else if (balancedFactorRight === SLIGHTLY_UNBALANCED_LEFT) {
-                                return this.rotationRL (node.right);
+                                node    = this.rotationRL (node.right); // ? node.right
                         }
                 }
 
