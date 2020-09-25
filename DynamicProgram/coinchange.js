@@ -1,5 +1,6 @@
 
-function coinChange (coins, amount) {
+var coinChange  = function (coins, amount)
+{
 
     // dp長度聲明amount+1, 包含 amount = 0的解
 
@@ -24,6 +25,9 @@ function coinChange (coins, amount) {
     return (dp[amount] === amount + 1) ? -1 : dp[amount];
 }
 
+// var numOfCoins = coinChange ([1,2,5], 11);
+// console.log (numOfCoins);
 
-var numOfCoins = coinChange ([1,2,5], 77);
-console.log (numOfCoins);
+module.exports = {
+        coinChange,
+};

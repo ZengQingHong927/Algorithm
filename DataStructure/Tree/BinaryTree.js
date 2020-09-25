@@ -1,4 +1,6 @@
-var   { defaultCompareFn, LESS_THAN, BIGGER_THAN }           = require ('../../util');
+var   { defaultCompareFn }              = require ('../../util');
+var   { LESS_THAN }                     = require ('../../util');
+var   { LESS_THAN, BIGGER_THAN }        = require ('../../util');
 
 class BinarySearchTree {
         constructor (compareFn = defaultCompareFn) {
@@ -6,6 +8,10 @@ class BinarySearchTree {
                 this.compareFn  = compareFn;
         }
 
+        /**
+         * 
+         * @param {number} key 
+         */
         insert (key) {
                 // console.log ('insert...');
                 if (this.root === null) {
@@ -16,7 +22,11 @@ class BinarySearchTree {
                 }
         }
 
-
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         * @param {number} key 
+         */
         insertNode (node, key) {
                 if (this.compareFn (key, node.key) === LESS_THAN) {
                         if (node.left === null) {
@@ -39,12 +49,21 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {number} key 
+         */
         search (key) {
                 if (typeof key !== 'number')    return 'type error';        
         
                 return this.searchNode (this.root, key);
         }
 
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         * @param {number} key 
+         */
         searchNode (node, key) {
                 if (node === null) {
                         return false;
@@ -70,6 +89,10 @@ class BinarySearchTree {
         
         }
 
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         */
         minNode (node) {
                 let     current = node;
                 while (current !== null && current.left !== null) {
@@ -88,6 +111,10 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         */
         maxNode (node) {
                 let     current = node;
                 while (current !== null && current.right !== null) {
@@ -97,10 +124,19 @@ class BinarySearchTree {
                 return current;
         }
 
+        /**
+         * 
+         * @param {number} key 
+         */
         remove (key) {
                 this.root = this.removeNode (this.root, key);
         }
 
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         * @param {number} key 
+         */
         removeNode (node, key) {
                 if (node === null) {
                         return null;
@@ -135,6 +171,10 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {function} cb 
+         */
         inOrderTranverse (cb) {
                 if (this.root !== null) {
                         this.inOrderTranverseNode (this.root, cb);
@@ -144,6 +184,11 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         * @param {function} cb 
+         */
         inOrderTranverseNode (node, cb) {
                 if (node !== null) {
                         this.inOrderTranverseNode (node.left, cb);
@@ -152,6 +197,10 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {function} cb 
+         */
         preOrderTranverse (cb) {
                 if (this.root !== null) {
                         this.preOrderTranverseNode (this.root, cb);
@@ -161,6 +210,11 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         * @param {function} cb 
+         */
         preOrderTranverseNode (node, cb) {
                 if (node !== null) {
                         cb (node.key);
@@ -169,6 +223,10 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {function} cb 
+         */
         postOrderTranverse (cb) {
                 if (this.root !== null) {
                         this
@@ -178,6 +236,11 @@ class BinarySearchTree {
                 }
         }
 
+        /**
+         * 
+         * @param {BinarySearchTreeNode} node 
+         * @param {function} cb 
+         */
         postOrderTranverseNode (node, cb) {
                 if (node !== null) {
                         this.postOrderTranverseNode (node.left, cb);

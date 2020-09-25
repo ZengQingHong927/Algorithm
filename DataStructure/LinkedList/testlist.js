@@ -1,4 +1,5 @@
-var { LinkedListNode, LinkedList } = require ('./LinkedList');
+var   { LinkedListNode }                = require ('./LinkedList');
+var   { LinkedList }                    = require ('./LinkedList');
 
 var myLinkedList = new LinkedList ();
 

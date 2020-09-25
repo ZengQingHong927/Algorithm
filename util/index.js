@@ -1,13 +1,16 @@
-var LESS_THAN                           = -1;
-var BIGGER_THAN                         = 1;
-var TYPE_ERROR                          = 'type error';
-var UNBALANCED_LEFT                     = 2;
-var SLIGHTLY_UNBALANCED_LEFT            = 1;
-var BALANCED                            = 0;
-var SLIGHTLY_UNBALANCED_RIGHT           = -1;
-var UNBALANCED_RIGHT                    = -2;
+var   { BinarySearchTree }              = require ('../DataStructure/Tree/BinaryTree');
+var   { BinarySearchTreeNode }          = require ('../DataStructure/Tree/BinaryTree');
 
-var defaultCompareFn            = function (a, b)
+var     LESS_THAN                               = -1;
+var     BIGGER_THAN                             = 1;
+var     TYPE_ERROR                              = 'type error';
+var     UNBALANCED_LEFT                         = 2;
+var     SLIGHTLY_UNBALANCED_LEFT                = 1;
+var     BALANCED                                = 0;
+var     SLIGHTLY_UNBALANCED_RIGHT               = -1;
+var     UNBALANCED_RIGHT                        = -2;
+
+var     defaultCompareFn                = function (a, b)
 {
 
         if (typeof a !== 'number' || typeof b !== 'number')    return TYPE_ERROR;
@@ -17,7 +20,7 @@ var defaultCompareFn            = function (a, b)
         return a > b ? BIGGER_THAN : LESS_THAN;
 };
 
-var compareNode                 = function (node, key)
+var     compareNode                     = function (node, key)
 {
 
         if (typeof key !== 'number' || typeof node.key !== 'number')    return TYPE_ERROR;
@@ -27,7 +30,14 @@ var compareNode                 = function (node, key)
         return node.key > key ? BIGGER_THAN : LESS_THAN;
 };
 
-var initBinarySearchTree        = function (tree, nodenum, limitnum)
+/**
+ * 
+ * @param {BinarySearchTree} tree 
+ * @param {number} nodenum 
+ * @param {number} limitnum 
+ */
+
+var     initBinarySearchTree            = function (tree, nodenum, limitnum)
 {
 
         if (nodenum > limitnum) return;
@@ -40,7 +50,7 @@ var initBinarySearchTree        = function (tree, nodenum, limitnum)
 
                 tree.insert (nodeKey);
         }
-}
+};
 
 module.exports = {
         compareNode,
@@ -53,4 +63,4 @@ module.exports = {
         SLIGHTLY_UNBALANCED_RIGHT,
         UNBALANCED_RIGHT,
         initBinarySearchTree,
-}
+};

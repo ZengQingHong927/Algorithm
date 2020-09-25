@@ -1,5 +1,6 @@
-var   { BinarySearchTreeNode, BinarySearchTree }        = require ('./DataStructure/Tree/BinaryTree');
-var   { initBinarySearchTree }                          = require ('./util');
+var   { BinarySearchTree }              = require ('../DataStructure/Tree/BinaryTree');
+var   { BinarySearchTreeNode }          = require ('../DataStructure/Tree/BinaryTree');
+var   { initBinarySearchTree }          = require ('./util');
 
 
 var     tree    = new BinarySearchTree ();

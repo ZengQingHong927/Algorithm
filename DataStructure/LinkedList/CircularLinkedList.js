@@ -1,5 +1,5 @@
-var {LinkedList} = require ('../LinkedList/LinkedList');
-var {LinkedListNode} = require ('../LinkedList/LinkedList');
+var   { LinkedList }                    = require ('../LinkedList/LinkedList');
+var   { LinkedListNode }                = require ('../LinkedList/LinkedList');
 
 class CircularLinkedList extends LinkedList {
         constructor () {
