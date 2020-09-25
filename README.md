@@ -8,7 +8,7 @@ Data structure and Algorithm implemented by javascript
 - [x] BST
 - [x] AVL
 - [ ] Red And Black Tree
-- [ ] Min Heap
+- [x] Min Heap
 - [ ] Max Heap
 - [ ] Stack
 - [ ] Queue
