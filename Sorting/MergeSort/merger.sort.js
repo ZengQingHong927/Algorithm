@@ -15,7 +15,7 @@ var     mergerSort              = function (arr)
         let     middle  = Math.floor (len/2);
         let     left    = arr.splice (0, middle);
         let     right   = arr;
-
+        
         return merge (mergerSort (left), mergerSort (right));
 };
 
@@ -31,6 +31,7 @@ var     merge                   = function (left, right)
                 else {
                         result.push (right.shift ());
                 }
+
         }
 
         while (left.length) result.push (left.shift ());
