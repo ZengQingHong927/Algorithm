@@ -9,7 +9,14 @@ var     SLIGHTLY_UNBALANCED_LEFT                = 1;
 var     BALANCED                                = 0;
 var     SLIGHTLY_UNBALANCED_RIGHT               = -1;
 var     UNBALANCED_RIGHT                        = -2;
+var     DOES_NOT_EXIST                          = 'does not exist';
 
+
+/**
+ * 
+ * @param {number} a 
+ * @param {number} b 
+ */
 var     defaultCompareFn                = function (a, b)
 {
 
@@ -62,5 +69,6 @@ module.exports = {
         BALANCED,
         SLIGHTLY_UNBALANCED_RIGHT,
         UNBALANCED_RIGHT,
+        DOES_NOT_EXIST,
         initBinarySearchTree,
 };
