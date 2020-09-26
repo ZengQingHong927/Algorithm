@@ -3,7 +3,7 @@ var   { LESS_THAN }                     = require ('../util');
 var   { BIGGER_THAN }                   = require ('../util');
 var   { DOES_NOT_EXIST }                = require ('../util');
 var   { swap }                          = require ('../util');
-
+var   { quickSort }                     = require ('../Sorting/QuickSort/quick.sort');
 /**
  * 
  * @param {array} arr 
@@ -32,9 +32,22 @@ var     BinarySesarchRecursive          = function (arr, value, idxLow, idxHigh,
         return DOES_NOT_EXIST;
 };
 
+/**
+ * 
+ * @param {array} arr 
+ * @param {number} value 
+ * @param {Function} compareFn 
+ */
 var     BinarySearch            = function (arr, value, compareFn)
 {
+        quickSort (arr);
 
+        let     idxLow          = 0;
+        let     idxHigh         = arr.length - 1;
+
+        return BinarySesarchRecursive (arr, value, idxLow, idxHigh, compareFn);
 };
 
-export BinarySearch;
+module.exports = {
+        BinarySearch,
+};

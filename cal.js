@@ -1,7 +1,7 @@
-var   { BinarySearchTree }              = require ('../DataStructure/Tree/BinaryTree');
-var   { BinarySearchTreeNode }          = require ('../DataStructure/Tree/BinaryTree');
+var   { BinarySearchTree }              = require ('./DataStructure/Tree/BinaryTree');
+var   { BinarySearchTreeNode }          = require ('./DataStructure/Tree/BinaryTree');
 var   { initBinarySearchTree }          = require ('./util');
-var     BinarySsearch                   = require ('./Search/BinarySearch');
+var   { BinarySearch }                  = require ('./Search/BinarySearch');
 
 var     tree    = new BinarySearchTree ();
 
@@ -15,4 +15,6 @@ initBinarySearchTree (tree, 10, 7);
 // console.log ('--------');
 // tree.inOrderTranverse ((val) => console.log (val));
 
-var result = BinarySsearch ([1,2,3,4], 2)
+// var idxTarget = BinarySearch ([5, 2, 0, 2, 9, 3], 2);
+
+// console.log (idxTarget);
