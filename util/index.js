@@ -27,6 +27,11 @@ var     defaultCompareFn                = function (a, b)
         return a > b ? BIGGER_THAN : LESS_THAN;
 };
 
+/**
+ * 
+ * @param {BinarySearchTreeNode} node 
+ * @param {number} key 
+ */
 var     compareNode                     = function (node, key)
 {
 
@@ -59,6 +64,31 @@ var     initBinarySearchTree            = function (tree, nodenum, limitnum)
         }
 };
 
+/**
+ * 
+ * @param {number} amount 
+ * @param {number} max 
+ * @param {number} min 
+ */
+var     genRandomNumber         = function (amount, max=999, min=1)
+{
+        var     numberList      = [];
+
+        while (numberList.length < amount) {
+                numberList.push (Math.floor (Math.random ()*(max-min+1) + min));
+        }
+
+        return numberList;
+};
+
+var     swap            = function (arr, i, j)
+{
+        let     temp    = arr[i];
+        arr[i]  = arr[j];
+        arr[j]  = temp;
+};
+
+
 module.exports = {
         compareNode,
         defaultCompareFn,
@@ -71,4 +101,6 @@ module.exports = {
         UNBALANCED_RIGHT,
         DOES_NOT_EXIST,
         initBinarySearchTree,
+        genRandomNumber,
+        swap,
 };

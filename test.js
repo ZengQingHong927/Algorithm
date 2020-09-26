@@ -2,6 +2,11 @@ var   { BinarySearchTree }              = require ('./DataStructure/Tree/BinaryT
 var   { BinarySearchTreeNode }          = require ('./DataStructure/Tree/BinaryTree');
 var   { initBinarySearchTree }          = require ('./util');
 var   { BinarySearch }                  = require ('./Search/BinarySearch');
+var   { genRandomNumber }               = require ('./util/index');
+var   { insertionSort }                 = require ('./Sorting/InsertionSort/insertion.sort');
+var   { quickSort }                     = require ('./Sorting/QuickSort/quick.sort');
+
+
 
 var     tree    = new BinarySearchTree ();
 
@@ -14,7 +19,3 @@ initBinarySearchTree (tree, 10, 7);
 // tree.remove (10);
 // console.log ('--------');
 // tree.inOrderTranverse ((val) => console.log (val));
-
-// var idxTarget = BinarySearch ([5, 2, 0, 2, 9, 3], 2);
-
-// console.log (idxTarget);
