@@ -1,6 +1,7 @@
 
-var     tool                            = require ('../Merge-Sort/tool');
-
+var   { swap }                  = require ('../../util/index');
+var   { LESS_THAN }             = require ('../../util/index');
+var   { defaultCompareFn }      = require ('../../util/index');
 
 var     insertionSort           = function (arr)
 {
@@ -9,8 +10,8 @@ var     insertionSort           = function (arr)
 
         for (let i = 0 ; i <= len ; i++) {
                 for (let j = i ; j > 0 ; j--) {
-                        if (tool.less (arr[j], arr[j-1])) {
-                                tool.swap (j, j-1 , arr);
+                        if (defaultCompareFn (arr[j], arr[j-1]) === LESS_THAN) {
+                                swap (arr, j, j-1);
                         }
                         else {
                                 break;

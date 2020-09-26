@@ -1,8 +1,7 @@
+
 /*
  * Recurceive merge sorting
  */
-
-var     tool                    = require ('../tool');
 
 var     mergerSort              = function (arr)
 {
@@ -41,9 +40,6 @@ var     merge                   = function (left, right)
         return result;
 };
 
-const arr = tool.genRandomNumber (100);
-const start = Date.now();
-const result = mergerSort(arr);
-const duration = Date.now() - start;
-console.log('Consuming time: ', duration);
-console.log('Sorting array: ', result);
+module.exports = {
+        mergerSort,
+};

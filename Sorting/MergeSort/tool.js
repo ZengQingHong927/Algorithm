@@ -1,11 +1,12 @@
 var     _                       = require('lodash');
 
-var     genRandomNumber         = function (amount)
+var     genRandomNumber         = function (amount, max=999, min=1)
 {
         var     numberList      = [];
 
         while (numberList.length < amount) {
-                numberList.push (_.random (999));
+                // numberList.push (_.random (999));
+                numberList.push (Math.floor (Math.random ()*(max-min+1) + min));
         }
 
         return numberList;

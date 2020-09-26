@@ -2,8 +2,9 @@ var   { defaultCompareFn }              = require ('../util');
 var   { LESS_THAN }                     = require ('../util');
 var   { BIGGER_THAN }                   = require ('../util');
 var   { DOES_NOT_EXIST }                = require ('../util');
-var   { swap }                          = require ('../util');
 var   { quickSort }                     = require ('../Sorting/QuickSort/quick.sort');
+
+
 /**
  * 
  * @param {array} arr 
